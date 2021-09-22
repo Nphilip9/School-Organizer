@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">School Organizer</string>
+
+    <!-- add_activity.xml -->
+    <string name="strings_string_workTypeHint">Work</string>
+    <string name="strings_string_importanceInfoText">Select Importance Level</string>
+    <string name="strings_string_selectedImportance">Selected Importance:</string>
+    <string name="strings_string_datePickerButtonText">Select Date</string>
+    <string name="strings_string_selectedDateText">Selected Date:</string>
+    <string name="strings_string_addButtonText">Add to List</string>
+
+    <!-- item_details_activity.xml -->
+    <string name="strings_string_work">Work:</string>
+    <string name="strings_string_importance">Importance:</string>
+    <string name="strings_string_date">Date:</string>
+    <string name="strings_string_modifyButtonHint">Modify</string>
+    <string name="strings_string_applyButtonText">Apply Changes</string>
+</resources>

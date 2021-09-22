@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Global Variables -->
+    <dimen name="dimensions_dimen_standardTextSize">16sp</dimen>
+</resources>

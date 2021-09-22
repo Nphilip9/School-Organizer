@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/addActivity_editText_workType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:ems="10"
+        android:hint="@string/strings_string_workTypeHint"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/addActivity_seekBar_importance"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="300dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:max="5"
+        android:progress="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addActivity_textView_importanceInfoText" />
+
+    <TextView
+        android:id="@+id/addActivity_textView_importanceInfoText"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:text="@string/strings_string_importanceInfoText"
+        android:textSize="@dimen/dimensions_dimen_standardTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addActivity_editText_workType" />
+
+    <Button
+        android:id="@+id/addActivity_button_datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/strings_string_datePickerButtonText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addActivity_textView_selectedImportance" />
+
+    <TextView
+        android:id="@+id/addActivity_textView_selectedDate"
+        android:layout_width="220dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/strings_string_selectedDateText"
+        android:textSize="@dimen/dimensions_dimen_standardTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addActivity_button_datePicker" />
+
+    <TextView
+        android:id="@+id/addActivity_textView_selectedImportance"
+        android:layout_width="180dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/strings_string_selectedImportance"
+        android:textSize="@dimen/dimensions_dimen_standardTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addActivity_seekBar_importance" />
+
+    <TextView
+        android:id="@+id/addActivity_textView_timeLeft"
+        android:layout_width="350dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="@dimen/dimensions_dimen_standardTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addActivity_textView_selectedDate" />
+
+    <Button
+        android:id="@+id/addActivity_button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/strings_string_addButtonText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addActivity_textView_timeLeft" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

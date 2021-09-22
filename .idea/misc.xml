@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/phili/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_checked.xml" value="0.23369565217391305" />
+        <entry key="..\:/Users/phili/MyProjects/AndroidStudioProjects/SchoolOrganizer/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.290625" />
+        <entry key="..\:/Users/phili/MyProjects/AndroidStudioProjects/SchoolOrganizer/app/src/main/res/drawable/textview_border_color.xml" value="0.290625" />
+        <entry key="..\:/Users/phili/MyProjects/AndroidStudioProjects/SchoolOrganizer/app/src/main/res/layout/activity_main.xml" value="0.17753623188405798" />
+        <entry key="..\:/Users/phili/MyProjects/AndroidStudioProjects/SchoolOrganizer/app/src/main/res/layout/add_activity.xml" value="0.17753623188405798" />
+        <entry key="..\:/Users/phili/MyProjects/AndroidStudioProjects/SchoolOrganizer/app/src/main/res/layout/checkbox_textview.xml" value="0.23369565217391305" />
+        <entry key="..\:/Users/phili/MyProjects/AndroidStudioProjects/SchoolOrganizer/app/src/main/res/layout/custom_alert_dialog.xml" value="0.25815217391304346" />
+        <entry key="..\:/Users/phili/MyProjects/AndroidStudioProjects/SchoolOrganizer/app/src/main/res/layout/custom_alert_dialog_importance.xml" value="0.25407608695652173" />
+        <entry key="..\:/Users/phili/MyProjects/AndroidStudioProjects/SchoolOrganizer/app/src/main/res/layout/custom_alert_dialog_work.xml" value="0.25407608695652173" />
+        <entry key="..\:/Users/phili/MyProjects/AndroidStudioProjects/SchoolOrganizer/app/src/main/res/layout/item_details_activity.xml" value="0.2" />
+        <entry key="..\:/Users/phili/MyProjects/AndroidStudioProjects/SchoolOrganizer/app/src/main/res/layout/list_view_item.xml" value="0.23369565217391305" />
+        <entry key="..\:/Users/phili/MyProjects/AndroidStudioProjects/SchoolOrganizer/app/src/main/res/layout/work_list_item.xml" value="0.23369565217391305" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
