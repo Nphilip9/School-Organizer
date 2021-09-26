@@ -21,6 +21,7 @@ public class ItemManager {
     public static final int CHANGE_ITEM_WORK = 1;
     public static final int CHANGE_ITEM_IMPORTANCE = 2;
     public static final int CHANGE_ITEM_SELECTED_DATE = 3;
+    public static final int CHANGE_ITEM_CLICKED_STATUS = 4;
 
     /**
      * Changes specific value from WorkListData element on "position"
@@ -48,7 +49,7 @@ public class ItemManager {
             String[] lineSplit = strLine.split("##");
 
             // "lineSplit" elements gets added to list
-            workListDataArrayList.add(new WorkListData(lineSplit[0], Integer.parseInt(lineSplit[1]), lineSplit[2]));
+            workListDataArrayList.add(new WorkListData(lineSplit[0], Integer.parseInt(lineSplit[1]), lineSplit[2], Boolean.parseBoolean(lineSplit[3])));
         }
 
         // Switch case on int var "modifyType"
@@ -69,6 +70,10 @@ public class ItemManager {
                 workListDataArrayList.get(position).setSelectedDate(newValue);
                 fileInputStream.close();
                 break;
+            case CHANGE_ITEM_CLICKED_STATUS:
+                workListDataArrayList.get(position).setClickedStatus(Boolean.parseBoolean(newValue));
+                fileInputStream.close();
+                break;
             default:
                 fileInputStream.close();
                 break;
@@ -77,7 +82,7 @@ public class ItemManager {
         // Write new Values to "WorkList.txt" file
         if(new File(path).delete()) {
             for (WorkListData workListData : workListDataArrayList) {
-                addItemToWorkList(path, new WorkListData(workListData.getWork(), workListData.getImportance(), workListData.getSelectedDate()));
+                addItemToWorkList(path, new WorkListData(workListData.getWork(), workListData.getImportance(), workListData.getSelectedDate(), workListData.getClickedStatus()));
             }
         }
 
@@ -146,7 +151,7 @@ public class ItemManager {
             String[] lineSplit = strLine.split("##");
 
             // "lineSplit" elements gets added to list
-            workListDataArrayList.add(new WorkListData(lineSplit[0], Integer.parseInt(lineSplit[1]), lineSplit[2]));
+            workListDataArrayList.add(new WorkListData(lineSplit[0], Integer.parseInt(lineSplit[1]), lineSplit[2], Boolean.parseBoolean(lineSplit[3])));
         }
 
         // Delete WorkListData-Element in "workListDataArrayList" on position "position"
@@ -154,15 +159,12 @@ public class ItemManager {
 
         if(new File(workFilePath).delete()) {
             for (WorkListData workListData : workListDataArrayList) {
-                addItemToWorkList(workFilePath, new WorkListData(workListData.getWork(), workListData.getImportance(), workListData.getSelectedDate()));
+                addItemToWorkList(workFilePath, new WorkListData(workListData.getWork(), workListData.getImportance(), workListData.getSelectedDate(), workListData.getClickedStatus()));
             }
         }
 
         // Closes and saves the file
         fileInputStream.close();
-
-        CheckboxManager checkboxManager = new CheckboxManager();
-        checkboxManager.deleteCheckboxValue(checkboxFilePath, getClickedListViewItemID(clickedListViewItemFilePath));
     }
 
     /**
@@ -188,7 +190,7 @@ public class ItemManager {
             String[] lineSplit = strLine.split("##");
 
             // "lineSplit" elements gets added to list
-            workListDataArrayList.add(new WorkListData(lineSplit[0], Integer.parseInt(lineSplit[1]), lineSplit[2]));
+            workListDataArrayList.add(new WorkListData(lineSplit[0], Integer.parseInt(lineSplit[1]), lineSplit[2], Boolean.parseBoolean(lineSplit[3])));
         }
 
         // Closes and saves the file
@@ -206,8 +208,22 @@ public class ItemManager {
     public void addItemToWorkList(String path, WorkListData workListData) throws IOException {
         FileWriter fileWriter = new FileWriter(path, true);
         fileWriter.append(workListData.getWork()).append("##").append(String.valueOf(workListData.getImportance())).append("##")
-                .append(workListData.getSelectedDate()).append("\n");
+                .append(workListData.getSelectedDate()).append("##").append(String.valueOf(workListData.getClickedStatus())).append("\n");
         fileWriter.close();
+    }
+
+    public void rewriteSortedWorkList(String path, ArrayList<WorkListData> workListDataArrayList) throws IOException {
+        if(new File(path).exists()) {
+            if(new File(path).delete()) {
+                if(new File(path).createNewFile()) {
+                    FileWriter fileWriter = new FileWriter(path, true);
+                    for (WorkListData workListData :workListDataArrayList) {
+                        addItemToWorkList(path, workListData);
+                    }
+                    fileWriter.close();
+                }
+            }
+        }
     }
 
     /**

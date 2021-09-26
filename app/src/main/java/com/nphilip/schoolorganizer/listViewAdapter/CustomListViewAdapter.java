@@ -14,7 +14,6 @@ import android.widget.CheckedTextView;
 import android.widget.ListView;
 
 import com.nphilip.schoolorganizer.R;
-import com.nphilip.schoolorganizer.manager.CheckboxManager;
 import com.nphilip.schoolorganizer.manager.ItemManager;
 
 import java.io.IOException;
@@ -93,19 +92,16 @@ public class CustomListViewAdapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup viewGroup) {
         view = LayoutInflater.from(context).inflate(R.layout.list_view_item, viewGroup, false);
         workListItem_textView_listViewItem = view.findViewById(R.id.listViewItem_textView_ListViewItem);
-        CheckboxManager checkboxManager = new CheckboxManager();
         ItemManager itemManager = new ItemManager();
 
         try {
-            boolean[] checkboxList = checkboxManager.getCheckboxStatuses(checkboxFilePath);
-            if(checkboxList.length != 0) {
-                if (checkboxList[position]) {
-                    checkboxManager.changeCheckboxValue(checkboxFilePath, position, true);
-                    workList.setItemChecked(position, true);
-                    workListItem_textView_listViewItem.setPaintFlags(workListItem_textView_listViewItem.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                    workListItem_textView_listViewItem.setCheckMarkDrawable(android.R.drawable.checkbox_on_background);
-                    Log.d("List View Item " + position, "Set selected: " + true);
-                }
+            boolean clicked = itemManager.getItemsFromWorkList(workListFilePath).get(position).getClickedStatus();
+            if (clicked) {
+                itemManager.modifyItem(workListFilePath, position, ItemManager.CHANGE_ITEM_CLICKED_STATUS, "true");
+                workList.setItemChecked(position, true);
+                workListItem_textView_listViewItem.setPaintFlags(workListItem_textView_listViewItem.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                workListItem_textView_listViewItem.setCheckMarkDrawable(android.R.drawable.checkbox_on_background);
+                Log.d("List View Item " + position, "Set selected: " + true);
             }
         } catch (IOException e) {
             e.printStackTrace();

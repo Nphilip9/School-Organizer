@@ -5,6 +5,7 @@ public class WorkListData {
     // Local Variables
     String work, selectedDate;
     int importance;
+    boolean clickedStatus;
 
     /**
      * Constructor writes the parameters to local variables
@@ -12,17 +13,17 @@ public class WorkListData {
      * @param importance int
      * @param selectedDate String
      */
-    public WorkListData(String work, int importance, String selectedDate) {
+    public WorkListData(String work, int importance, String selectedDate, boolean clickedStatus) {
         this.work = work;
         this.importance = importance;
         this.selectedDate = selectedDate;
+        this.clickedStatus = clickedStatus;
     }
 
     /**
      * Sets the work to "work"
      * @param work String
      */
-
     public void setWork(String work) {
         this.work = work;
     }
@@ -44,6 +45,14 @@ public class WorkListData {
     }
 
     /**
+     * Sets the clicked status to "clickedStatus"
+     * @param clickedStatus boolean
+     */
+    public void setClickedStatus(boolean clickedStatus) {
+        this.clickedStatus = clickedStatus;
+    }
+
+    /**
      * Returns the work
      * @return String
      */
@@ -60,10 +69,18 @@ public class WorkListData {
     }
 
     /**
-     * Return the importance
+     * Returns the importance
      * @return int
      */
     public int getImportance() {
         return importance;
+    }
+
+    /**
+     * Returns the clicked status
+     * @return boolean
+     */
+    public boolean getClickedStatus() {
+        return clickedStatus;
     }
 }

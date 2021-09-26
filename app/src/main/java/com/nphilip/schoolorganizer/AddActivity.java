@@ -12,7 +12,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nphilip.schoolorganizer.listViewAdapter.WorkListData;
-import com.nphilip.schoolorganizer.manager.CheckboxManager;
 import com.nphilip.schoolorganizer.manager.ItemManager;
 
 import java.io.IOException;
@@ -28,9 +27,8 @@ public class AddActivity extends AppCompatActivity {
             addActivity_textView_selectedDate, addActivity_textView_timeLeft;
     Button addActivity_button_datePicker, addActivity_button_add;
 
-    // Reference to ItemManager, CheckboxManager
+    // Reference to ItemManager
     ItemManager itemManager = new ItemManager();
-    CheckboxManager checkboxManager = new CheckboxManager();
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -90,8 +88,7 @@ public class AddActivity extends AppCompatActivity {
         // OnClick on "addActivity_button_add" calls the startMainActivity()
         addActivity_button_add.setOnClickListener(v -> {
             try {
-                itemManager.addItemToWorkList(getFilesDir() + "/WorkList.txt", new WorkListData(addActivity_editText_workType.getText().toString(), addActivity_seekBar_importance.getProgress(), selectedDate.get()));
-                checkboxManager.addNewCheckboxStatus(getFilesDir() + "/Checkboxes.txt", false);
+                itemManager.addItemToWorkList(getFilesDir() + "/WorkList.txt", new WorkListData(addActivity_editText_workType.getText().toString(), addActivity_seekBar_importance.getProgress(), selectedDate.get(), false));
                 startMainActivity();
                 finish();
             } catch (IOException e) {

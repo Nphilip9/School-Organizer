@@ -49,6 +49,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 
         // configure view components
         try {
+            System.out.println(itemManager.getClickedListViewItemID(getCacheDir() + "/ClickedListViewItem.txt"));
             itemDetailsActivity_textView_work.append(" " + itemManager.getItemsFromWorkList(getFilesDir() + "/WorkList.txt").get(itemManager.getClickedListViewItemID(getCacheDir() + "/ClickedListViewItem.txt")).getWork());
             itemDetailsActivity_textView_importance.append(" " + itemManager.getItemsFromWorkList(getFilesDir() + "/WorkList.txt").get(itemManager.getClickedListViewItemID(getCacheDir() + "/ClickedListViewItem.txt")).getImportance());
             itemDetailsActivity_textView_date.append(" " + itemManager.getItemsFromWorkList(getFilesDir() + "/WorkList.txt").get(itemManager.getClickedListViewItemID(getCacheDir() + "/ClickedListViewItem.txt")).getSelectedDate());
