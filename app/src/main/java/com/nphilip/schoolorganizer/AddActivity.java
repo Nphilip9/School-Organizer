@@ -24,7 +24,7 @@ public class AddActivity extends AppCompatActivity {
     EditText addActivity_editText_workType;
     SeekBar addActivity_seekBar_importance;
     TextView addActivity_textView_importanceInfoText, addActivity_textView_selectedImportance,
-            addActivity_textView_selectedDate, addActivity_textView_timeLeft;
+            addActivity_textView_selectedDate, addActivity_textView_timeDifference;
     Button addActivity_button_datePicker, addActivity_button_add;
 
     // Reference to ItemManager
@@ -41,7 +41,7 @@ public class AddActivity extends AppCompatActivity {
         addActivity_seekBar_importance = findViewById(R.id.addActivity_seekBar_importance);
         addActivity_textView_importanceInfoText = findViewById(R.id.addActivity_textView_importanceInfoText);
         addActivity_textView_selectedImportance = findViewById(R.id.addActivity_textView_selectedImportance);
-        addActivity_textView_timeLeft = findViewById(R.id.addActivity_textView_timeLeft);
+        addActivity_textView_timeDifference = findViewById(R.id.addActivity_textView_timeDifference);
         addActivity_textView_selectedDate = findViewById(R.id.addActivity_textView_selectedDate);
         addActivity_button_datePicker = findViewById(R.id.addActivity_button_datePicker);
         addActivity_button_add = findViewById(R.id.addActivity_button_add);
@@ -80,7 +80,8 @@ public class AddActivity extends AppCompatActivity {
                 selectedDate.set(day + "." + month + "." + year);
                 String timeDifference = itemManager.getTimeDifference(Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + "." +
                         Calendar.getInstance().get(Calendar.MONTH) + "." + Calendar.getInstance().get(Calendar.YEAR), day + "." + month + "." + year);
-                addActivity_textView_timeLeft.setText(timeDifference);
+                addActivity_textView_timeDifference.setText(timeDifference);
+                addActivity_textView_selectedDate.setText(selectedDate.get());
             }, Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
             datePickerDialog.show();
         });

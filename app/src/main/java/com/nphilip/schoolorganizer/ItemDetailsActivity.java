@@ -136,8 +136,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 
             alertDialogBuilder.setPositiveButton("OK", (dialogInterface, i) -> {
                 try {
-                    itemManager.deleteItemFromWorkList(getFilesDir() + "/WorkList.txt", getFilesDir() + "/Checkboxes.txt",
-                            getCacheDir() + "/ClickedListViewItem.txt", itemManager.getClickedListViewItemID(getCacheDir() + "/ClickedListViewItem.txt"));
+                    itemManager.deleteItemFromWorkList(getFilesDir() + "/WorkList.txt", itemManager.getClickedListViewItemID(getCacheDir() + "/ClickedListViewItem.txt"));
                     startMainActivity();
                     finish();
                 } catch (IOException e) {

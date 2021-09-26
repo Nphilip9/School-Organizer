@@ -6,7 +6,8 @@
     <string name="strings_string_importanceInfoText">Select Importance Level</string>
     <string name="strings_string_selectedImportance">Selected Importance:</string>
     <string name="strings_string_datePickerButtonText">Select Date</string>
-    <string name="strings_string_selectedDateText">Selected Date:</string>
+    <string name="strings_string_selectedDate">Selected Date:</string>
+    <string name="strings_string_timeDifference">Time Left:</string>
     <string name="strings_string_addButtonText">Add to List</string>
 
     <!-- item_details_activity.xml -->

@@ -129,12 +129,10 @@ public class ItemManager {
     /**
      * Deletes item on "position" from "WorkList.txt" file and deletes checkbox Item
      * @param workFilePath String
-     * @param checkboxFilePath String
-     * @param clickedListViewItemFilePath String
      * @param position int
      * @throws IOException RuntimeException
      */
-    public void deleteItemFromWorkList(String workFilePath, String checkboxFilePath, String clickedListViewItemFilePath, int position) throws IOException {
+    public void deleteItemFromWorkList(String workFilePath, int position) throws IOException {
         // File content is stored in "workListDataArrayList"
         ArrayList<WorkListData> workListDataArrayList = new ArrayList<>();
 
@@ -212,6 +210,12 @@ public class ItemManager {
         fileWriter.close();
     }
 
+    /**
+     * Rewrites the sorted list "workListDataArrayList" to the file "path", if it exists
+     * @param path String
+     * @param workListDataArrayList ArrayList<WorkListData>
+     * @throws IOException RuntimeException
+     */
     public void rewriteSortedWorkList(String path, ArrayList<WorkListData> workListDataArrayList) throws IOException {
         if(new File(path).exists()) {
             if(new File(path).delete()) {
